@@ -1,22 +1,24 @@
 #include <stdio.h>
 
-int main()
-{
-    int n;
-    scanf("%d", &n);
+#define MAX_SIZE 10
 
-     for (int i = 2; i <= n; i++) {
-        for (int j = 1; j <= i; j++) {
-            printf("*");
-        }
-        printf("\n"); 
-    }
-    for (int i = n; i >= 1; i--) {
-        for (int j = 1; j <= i; j++) {
-            printf("*");
-        }
-        printf("\n");
-    }
+int main()
+{ 
+    int ary[] = {1,2,3,4,5,6,7,8,9,10};
+    int*TStart;
+    int*TEnd;
+
+    printf("Array forward : ");
+    for (TStart = ary , TEnd = ary + MAX_SIZE; TStart < TEnd; TStart++)
+    printf("%3d", *TStart);
+
+    printf("\n");
+
+    printf("Array backward : ");
+    for (TStart = TEnd - 1; TStart >= ary; TStart--)
+    printf("%3d", *TStart);
+
+    printf("\n");
 
     return 0;
 }

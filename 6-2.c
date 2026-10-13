@@ -1,17 +1,16 @@
 #include <stdio.h>
 
-int main()
+void main()
 {
-    int n;
-    scanf("%d", &n);
+    int m_int = 15;
+    double m_double = 3.1477;
+    char m_char = 'M';
+    void* mp;
 
-    for (int i = 1; i <= n; i++) {        //행
-    for (int j = 5; j  >= i; j--) {     //열
-
-            printf("*");
-        }
-        printf("\n");           
-    }
-
-    return 0;
+    mp = &m_int;
+    printf("m_int %d\n", *(int*)mp);
+    mp = &m_double;
+    printf("m_double %f\n", *(double*)mp);
+    mp = &m_char;
+    printf("m_char %c\n, *(char*)mp");
 }
