@@ -1,0 +1,72 @@
+1. 구조체 변수 대입과 복사에 대한 설명으로 옳지 않은 것은
+
+① C 언어에서는 같은 자료형의 구조체 변수 간 대입이 가능하며, 대입 방법은 기본 자료형 변수 간 대입과 유사하다.
+② '전체 복사'는 소스 구조체의 각 멤버를 개별적으로 복사하는 것이 아니라 구조체 전체를 한 번에 복사한다.
+③ '깊은 복사'는 int형, float형, char형 배열 등과 같은 기본 자료형의 멤버에 대해 적용된다.
+④ '얕은 복사'는 포인터 멤버가 있는 경우 포인터가 가리키는 실제 데이터까지 모두 함께 복사되는 것을 의미한다.
+
+답 4번
+
+2. 구조체 포인터와 멤버 접근에 대한 설명으로 옳지 않은 것은?
+
+① 구조체 포인터로 구조체의 멤버 변수에 접근하는 형식은 주로 (*p).name과 p->name 두 가지가 있다.
+② (*p).name과 p->name은 모두 포인터 p가 가리키는 구조체의 멤버 name을 의미한다.
+③ *p.name은 구조체 p의 멤버 변수인 name이 가리키는 내용을 의미한다.
+④ *p->name은 연산자 우선순위에 의해 (*p).->name으로 해석된다.
+
+담 4번
+
+3.구조체와 함수에 대한 설명으로 옳은 것은?
+
+① 구조체와 함수를 결합하면 데이터와 관련된 작업을 논리적으로 묶는 데 유용하다.
+② 구조체는 함수의 인수로는 사용할 수 있으나, 반환값으로는 사용할 수 없다.
+③ 인수 또는 반환값으로 사용될 때는 참조에 의한 호출 개념이 적용되어 주소값만 전달된다.
+④ 구조체를 함수의 인수로 '값에 의한 전달' 방식을 사용할 때 함수에 전달되는 것은 원본 구조체 자체이다.
+
+답 1번
+
+4. 아래 코드에서 괄호[ ]의 들어갈 코드를 고르시오.
+
+#pragma warning(disable:4996)
+#include <stdio.h>
+#include <string.h>
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+void printPerson(struct Person p) {
+    printf("Name: %s, Age: %d\n", p.name, p.age);
+}
+
+void updateAge(struct Person p) {
+    strcpy(  [      ]  , "Yun");
+    p.age = 22;
+}
+
+int main() {
+    struct Person p1 = { "Moon", 25 };
+
+    printPerson(p1);
+    updateAge(p1);
+    printPerson(p1);
+
+    return 0;
+}
+
+① p->name
+② *p->name
+③ p.name
+④ (*p).name
+
+답 3번
+
+5. emp의 포인터 address가 가리키는 Address 구조체의 멤버 street에 접근하는 올바른 코드는 무엇인가?
+
+① emp.address = &addr;  
+② emp.address->street 
+③ emp.address->zipCode = 11223;  
+④ emp.address.street
+
+답 2번
