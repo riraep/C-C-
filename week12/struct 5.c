@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+struct Person {
+	char name[21];
+	int age;
+};
+
+int main() {
+	struct Person people[3];
+	int i;
+
+	for (i = 0; i < 3; i++) {
+		scanf("%20s %d", people[i].name, &people[i].age);
+	}
+
+	for (i = 0; i < 3; i++) {
+		printf("Name : %s\n", people[i].name);
+		printf("Age : %d\n", people[i].age);
+	}
+
+	return 0;
+}
